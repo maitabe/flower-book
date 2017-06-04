@@ -1,14 +1,15 @@
 <div>
 
-  <div class="row">
-
-    <div class="col-lg-6 custom-margin">
+<div class="row">
+  <div class="col-lg-6 custom-margin">
         <div class="input-group align-right">
           <input type="text" class="form-control" placeholder="Search flower" ng-model="someRandomText">
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
-     <div class="col-sm-3 col-md-4" ng-repeat="flower in flowers | filter:someRandomText">
+</div>
 
+  <div class="row">
+     <div class="col-sm-3 col-md-4" ng-repeat="flower in flowers | filter:someRandomText">
           <div class="thumbnail">
 
             <img class="image" ng-src="{{flower.imagelink}}" alt="..." >
