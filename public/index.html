@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-app="flowerBook" ng-controller="mainCtrl">
+  <nav class="navbar  navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="navbar-brand" ui-sref="home ">Flower Book</a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="navbar-brand nav-link" ui-sref="about" ui-sref-active="active">Language</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Flower Booklet</h1>
+    </div>
+  </div>
+
+  <ui-view></ui-view>
+
+  </div> <!-- end of container -->
+
+   <script src="angular/angular.js"></script>
+   <script src="@uirouter/core/_bundles/ui-router-core.js"></script>
+   <script src="@uirouter/angularjs/release/ui-router-angularjs.js"></script>
+  <script src="angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/mainController.js"></script>
+  <script src="js/services/flowerService.js"></script>
+
+
+</body>
+</html>

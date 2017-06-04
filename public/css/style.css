@@ -1,0 +1,19 @@
+.navbar-inverse {
+    background-color: purple;
+    border-color: #080808;
+}
+
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: purple;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.custom-margin {
+	margin-bottom: 50px;
+}
