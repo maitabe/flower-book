@@ -6,24 +6,18 @@ app.factory('flowerService', ['$http' , function($http) {
 		flowers: [],
 		tran:[]
 
-	}
+	};
 
-	flowerList.fetchData = function() {
+
+
+	flowerList.getAllFlowers = function() {
 		return $http.get('/flowers').then(function(data) {
-			console.log(data);
-			angular.copy(data.data, flowerList.flowers)
-		})
-	}
-
-	flowerList.fetcTran = function() {
-		return $http.get('/tran').then(function(data) {
-			console.log(data);
-			angular.copy(data.data, flowerList.tran)
-		})
-	}
-	// .catch(function(error) {
-	// 	console.log(error.message);
-	// })
+			var flowersRes = JSON.parse(data.data);
+			console.log(flowersRes);
+			angular.copy(flowersRes.flowers.data, flowerList.flowers);
+			angular.copy(flowersRes.tran.data, flowerList.tran);
+		});
+	};
 
 	return flowerList;
-}])
+}]);

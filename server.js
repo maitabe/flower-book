@@ -1,5 +1,7 @@
+//after-hours branch
 var express = require('express');
 var bodyParser = require('body-parser');
+var request = require('request');
 // var mongoose = require('mongoose');
 
 /*mongoose.connect('mongodb://localhost/nameDB');
@@ -21,32 +23,27 @@ app.use(express.static('node_modules'));
 app.use('/users', users);*/
 
 
+var flowers = {};
+var translations = {};
 
-//flowers data
-var flowers = [
-{"name":"rose",
-"bestseason":"fall",
-"imagelink":"http://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/images/photo_9705.jpg?itok=44DBZcZV"},
-{"name":"Calla lily",
-"bestseason":"summer",
-"imagelink":"https://www.gardenia.net/rendition.slider_detail/uploads/plant/1429882990-890258a76fbc11f3a/41305.jpg"},
-{"name":"sunset safari",
-"bestseason":"winter",
-"imagelink":"http://sierraflowerfinder.blob.core.windows.net/medias/FlowerPictures/792/safari%20sunset1.jpg"},
-{"name":"hypericum","best season":"winter","image link":"http://chrysalflowerfood.com/blog/wp-content/uploads/2014/04/Hot-Pink-Bouquet-Filled-with-Callas-Gomphrena-Hot-Pink-Princess-Roses-and-Bright-Green-Hypericum-Berries-The-French-Bouquet-James-Walton-Photo.jpg"},
-{"name":"orchid Phalaenopsis",
-"bestseason":"winter to spring",
-"imagelink":"http://agroflora.ru/wp-content/uploads/2015/08/cvetok-orhidei.jpg"}
-]
+//getFlowers api third party
+request('http://52.51.81.191:85/getFlowers', function(error, response, body) {
+	getFlowers = JSON.parse(body);
+});
 
-//api third party
+//getTranslation api third party
+request('http://52.51.81.191:85/getTranslate', function(error, response, body) {
+	translations = JSON.parse(body);
+});
 
 //api's or entry point to access the data
 
-//"get" data
+//"get" data flowers
 app.get('/flowers', function(req, res, next) {
 	console.log('/flowers');
-	res.json(flowers);
+	var mergedObj = {flowers: getFlowers, tran: translations};
+	var allData = JSON.stringify(mergedObj);
+	res.json(allData);
 
 });
 
