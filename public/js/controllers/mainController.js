@@ -5,8 +5,8 @@ app.controller('mainCtrl',
 
   	flowerService.getAllFlowers().then(function() {
 		$scope.flowers = flowerService.flowers;
-		$scope.tran = flowerService.tran;
-		console.log($scope.tran.en);
+		$scope.tran = flowerService.tran.he;
+		console.log($scope.tran);
 	});
 
 
