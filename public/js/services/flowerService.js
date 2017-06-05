@@ -8,8 +8,6 @@ app.factory('flowerService', ['$http' , function($http) {
 
 	};
 
-
-
 	flowerList.getAllFlowers = function() {
 		return $http.get('/flowers').then(function(data) {
 			var flowersRes = JSON.parse(data.data);
@@ -20,4 +18,6 @@ app.factory('flowerService', ['$http' , function($http) {
 	};
 
 	return flowerList;
+
+
 }]);
