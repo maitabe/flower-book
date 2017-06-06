@@ -10,7 +10,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 	};
 
-
 	$stateProvider.state(flowers);
 
 	$urlRouterProvider.otherwise('/flowers');
