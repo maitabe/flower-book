@@ -1,15 +1,15 @@
 <div>
 
   <div class="row custom-margin">
-    <div class="col-lg-6 ">
+    <div class="col-md-6 col-sm-3">
           <div class="input-group align-right">
             <input type="text" class="form-control" placeholder="Search flower" ng-model="someRandomText">
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
     <div class="col-lg-6  ">
         <div class="lang-container">
-          <toggle ng-model="toggleValue" ng-change="changed()" on="Hebrew" off="English" ng-click="activeLang = !activeLang"></toggle>
-          <!-- <div><a ng-click="activeLang = !activeLang">{{activeLang ? 'ENGLISH' : 'HEBREW'}}</a></div> -->
+         <!--  <toggle ng-model="toggleValue" ng-change="changed()" on="Hebrew" off="English" ng-click="activeLang = !activeLang"></toggle> -->
+          <div><a ng-click="activeLang = !activeLang">{{activeLang ? 'ENGLISH' : 'HEBREW'}}</a></div>
         </div>
     </div>
   </div>

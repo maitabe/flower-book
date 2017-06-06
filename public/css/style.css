@@ -37,15 +37,19 @@ ul {
 
 .lang-container a {
 	/*color: #107B7F;*/
-	color: #517099;
+	color: #517D99;
 	text-decoration: none;
+	cursor:pointer
 }
 
 .lang-container a:hover {
-	color: #107B7F;
+	color: #519999;
 	text-decoration: none;
 }
 
+.container-row {
+	width: 50%;
+}
 
 .custom-holder{
 	padding: 20px;

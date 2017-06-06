@@ -1,4 +1,4 @@
-var app = angular.module('flowerBook', ['ui.router', 'ui.toggle']);
+var app = angular.module('flowerBook', ['ui.router' ]);
 
 app.config(function($stateProvider, $urlRouterProvider){
 
